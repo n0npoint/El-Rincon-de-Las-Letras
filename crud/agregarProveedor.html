@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Rincon de las Letras</title>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="contenedor-banner">
+
+        <div class="contenedor">
+            <div class="barra">
+                <a class="logo" href="/index.html">
+                    <h1 class="logo__nombre no-margin centrar-texto">ElRincon<span class="logo__bold">DeLasLetras</span></h1>
+                </a>
+
+                <nav class="navegacion">
+                    <a href="/index.html" class="navegacion__enlace">Home</a>
+                    <a href="/virtual.html" class="navegacion__enlace">Virtual</a>
+                    <a href="/fisico.html" class="navegacion__enlace">Fisico</a>
+                    <a href="/nosotros.html" class="navegacion__enlace">Nosotros</a>
+
+                </nav>
+            </div>
+        </div>
+
+        <div class="header__texto">
+            <h2 class="no-margin">Descubre el Mundo Entre Páginas</h2>
+            <p class="no-margin">Explorando Ideas, Creando Aventuras</p>
+        </div>
+        </div>>
+    </header>
+
+    <main class="contenedor">
+        <h3 class="centrar-texto" style="margin-top: 5%;">Modulo Proveedor </h3>
+
+        <div class=""></div>
+
+        <!--   **********************************   -->
+
+        <form action="generador.php" method="post">
+            <button style="margin-left: 41%; margin-top: 2%;" type="button" class="boton boton--primario" data-bs-toggle="modal" data-bs-target="#miModal">Agregar Proveedor</button>
+            <div class="modal fade" id="miModal" tabindex="-1" aria-hidden="true" aria-labelledby="modalTitle">
+                <div class="modal-dialog modal-dialog-scrollable modal-fullscreen-l-down">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="modalTitle"> Adicionar Proveedor | El Rincon de las Letras </h4>
+                        </div>
+                        <div class="modal-body">
+                            <h6>Nombre:</h6>
+                            <input type="text" name="cable-mac" style="width: 75px;"><br><br>
+                            
+                            <h6>Email</h6><br>                            
+                            <input type="text" name="por_us1" style="width: 100px;"> 
+                            <h6>Telefono</h6><br>
+                            <input type="text" name="feq_us1" style="width: 100px;">
+                            <br>
+                            <h6>Direccion</h6>
+                            <input type="text" name="cable-mac" style="width: 75px;"><br><br>
+                            <h6>Ciudad</h6>
+                            <select name="con_us1" class="form-select form-select-sm mb-3" aria-label=".form-select-sm example" style="width: 75px;">
+                                <option selected=""></option>
+                                <option>Tegucigalpa</option>
+                                <option>SPS</option>                              
+                            </select>
+                            <h6>fecha inicio de contrato</h6>                        
+                            <input type="text" name="cable-mac" style="width: 75px;"><br><br>
+                            <h6>fecha fin de contrato</h6>                        
+                            <input type="text" name="cable-mac" style="width: 75px;"><br><br>
+                            <br>
+                            
+    
+    
+                        </div>
+                        <div class="modal-footer">
+    
+    
+                            <button type="text" class="boton boton--primario" id="register" name="success" type="submit" value="crear archivo">OK</button>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    
+<!--   **********************************   -->
+<!--      
+
+        <form class="formulario">
+            <div class="campo">
+                <label class="campo__label" for="nombre">Nombre</label>
+                <input 
+                    class="campo__field"
+                    type="text" 
+                    placeholder="Tu Nombre" 
+                    id="nombre"
+                >
+            </div>
+            <div class="campo">
+                <label class="campo__label" for="email">E-mail</label>
+                <input 
+                    class="campo__field"
+                    type="email" 
+                    placeholder="Tu E-mail" 
+                    id="email"
+                >
+            </div>
+            <div class="campo">
+                <label class="campo__label" for="mensaje">Mensaje</label>
+                <textarea 
+                    class="campo__field campo__field--textarea"
+                    id="mensaje"
+                ></textarea>
+            </div>
+
+            <div class="campo">
+                <input type="submit" value="Enviar" class="boton boton--primario">
+            </div>
+        </form>
+
+        -->
+    </main>
+
+    <footer class="footer" style="margin-top: 20%;">
+        <div class="contenedor">
+            <div class="barra">
+                <a class="logo" href="/index.html">
+                    <h1 class="logo__nombre no-margin centrar-texto">ElRincon<span class="logo__bold">DeLasLetras</span></h1>
+                </a>
+
+                <nav class="navegacion">
+                    <a href="/index.html" class="navegacion__enlace">Salir</a>
+                 
+
+                </nav>
+        
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="/js/modernizr.js"></script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="package/dist/sweetalert2.all.js"></script>
+    <script src="package/dist/sweetalert2.all.min.js"></script>
+    <script src="package/jquery-3.6.0.min.js"> </script>
+
+    <script src="js/page.js"></script>
+    <script src="js/buscador.js"></script>
+    <script src="js/user-js"></script>
+
+
+</body>
+</html>
