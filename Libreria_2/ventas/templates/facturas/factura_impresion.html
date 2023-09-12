@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facturacion</title>
+    <link rel="stylesheet" href="{% static 'css/factura.css' %}">
+
+    
+</head>
+<body>
+    <div>
+        {% block body %}
+
+                
+        {% endblock %}
+        <div class="invoice">
+            <div class="header">
+                <div class="company-info">
+                    <h2>El Rincon de las Letras</h2>
+                    <p>Distrito Central , Tegucigalpa , Boulevard Proceres</p>
+                    <p>Teléfono: (+504) 2222-2222</p>
+                    <p>Email: rincon_letrashn@gmail.com</p>
+                </div>
+            </div>
+            <div class="invoice-details">
+                <h2>Factura #{{id_factura}}</h2>
+                {% if id_empleado == "None" %}
+                    <p>Venta: En Linea</p>
+                {% else %}
+                    <p>Atendido Por: {{nombre_empleado}} {{apellido_empleado}}</p>
+                    <p>ID: {{id_empleado}}</p>
+                {% endif %}
+                <p>Fecha: {{fecha}}</p>
+                <p>Fecha de Vencimiento: {{hora}}</p>
+            </div>
+            <br>
+            <table class="invoice-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>TITULO</th>
+                        <th>ISBN</th>
+                        <th>PRECIO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in carro_items %}
+                            <tr>
+                                <td>{{item.id_libro}}</td>
+                                <td>{{item.titulo}}</td>
+                                <td>{{item.isbn}}</td>
+                                <td>Lps. {{item.precio}}</td>
+                            </tr>
+                        {%endfor %}
+
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" style="background-color:#f2f4f3"><strong>Subtotal</strong></td>
+                        <td style="background-color: #a9927d; color: white;"><strong>Lps. {{subtotal_compra}}</strong></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="background-color:#f2f4f3;"><strong>Impuesto</strong></td>
+                        <td style="background-color:#a9927d; color: #fff"><strong>Lps. {{impuesto}}</strong></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="background-color:#f2f4f3;"><strong>total</strong></td>
+                        <td style="background-color:#a9927d; color: #fff"><strong>Lps. {{importe_total_carro}}</strong></td>
+                    </tr>
+                </tfoot>
+            </table>
+            <br>
+            <div class="client-info">
+                <h2>Cliente ID: {{id_cliente}}</h2>
+                <p>Nombre: {{nombre_cliente}} {{apellido_cliente}}</p>
+                <p>Dirección: {{direccion}}</p>
+                <p>Teléfono: {{telefono}}</p>
+                <p>Email: {{email}}</p>
+            </div>
+            <div class="footer">
+                <p>Gracias por Preferirnos.</p>
+            </div>
+        </div>
+    </body>
+</html>
