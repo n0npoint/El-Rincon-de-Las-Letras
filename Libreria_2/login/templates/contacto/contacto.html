@@ -1,0 +1,44 @@
+{% extends 'base/base_login.html' %}
+{% load static %}
+
+{% block title %}
+    Contactanos
+{% endblock %}
+
+{% block body %}
+    <main class="contenedor">
+        <h3 class="centrar-texto">Contacto</h3>
+
+        <div class="contacto-bg"></div>
+
+        <form method="POST" class="formulario">
+            {%csrf_token%}
+            <div class="campo">
+                <label class="campo__label" for="asunto">Asunto</label>
+                <input 
+                    class="campo__field"
+                    type="text" 
+                    placeholder="Escribe tu 'Asunto' aqui" 
+                    id="asunto"
+                    name="asunto" 
+                >
+            </div>
+            <div class="campo">
+                <label class="campo__label" for="mensaje">Mensaje</label>
+                <textarea 
+                    class="campo__field campo__field--textarea"
+                    id="mensaje"
+                    placeholder="Escribe tu 'Mensaje' Aqui"
+                    name="mensaje" 
+                ></textarea>
+            </div>
+
+            <div class="campo">
+                <input type="submit" value="Enviar" class="boton boton--primario">
+            </div>
+        </form>
+
+        
+    </main>
+
+{%endblock %}

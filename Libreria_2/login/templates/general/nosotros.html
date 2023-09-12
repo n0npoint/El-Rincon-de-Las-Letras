@@ -1,0 +1,37 @@
+{% extends 'base/base_login.html' %}
+{% load static %}
+
+{% block title %}
+
+    ¿Quienes Somos?
+{% endblock %}
+
+{% block body %}
+<main class="contenedor">
+    <h3 class="centrar-texto">Sobre Nosotros</h3>
+
+    <div class="sobre-nosotros">
+        <div class="sobre-nosotros__imagen">
+            <img src="{% static 'img/libro6.jpg' %}" alt="imagen nosotros">
+        </div>
+
+        <div class="sobre-nosotros__texto">
+            <h1>Sobre El Rincón de las Letras</h1>
+            <p>Fundada en 2018, El Rincón de las Letras es hoy la cadena de librerías líder en el sector. La evolución de El Rincón de las Letras se basa en su rica tradición librera, siendo una librería de "fondo" con más de un millón de referencias en su catálogo.</p>
+            <p>Las señas de identidad originales se mantienen y refuerzan:</p>
+            <ul>
+                <li><strong>Generalista:</strong> por la universalidad de los contenidos</li>
+                <li><strong>Especializada:</strong> por la preparación de sus empleados</li>
+                <li><strong>Moderna:</strong> por la constante atención a las últimas tecnologías</li>
+                <li><strong>Aglutinadora:</strong> por ser espacio de reflexión y encuentro</li>
+                <li><strong>Completa:</strong> por la amplitud de la oferta y personalización de servicios</li>
+            </ul>
+            <p>El Rincón de las Letras ofrece una variedad de servicios, incluyendo Pedidos Personalizados y la venta a organismos y bibliotecas.</p>
+            <p>La amplitud y profundidad de su base de datos se refleja en la edición periódica de catálogos especializados por materias y en la presencia en Internet de casadellibro.com, brindando información a los cinco continentes.</p>
+            <p>El personal, compuesto por más de 40 empleados, es el complemento imprescindible para la cantidad, variedad y calidad de la oferta bibliográfica. Son conocedores de los clásicos y las últimas novedades en todos los campos, lo que otorga a Casa del Libro un gran reconocimiento entre lectores y agentes culturales.</p>
+            
+        </div>
+    </div>
+</main>
+
+{% endblock %}

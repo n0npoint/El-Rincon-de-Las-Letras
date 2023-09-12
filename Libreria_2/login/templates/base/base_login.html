@@ -1,0 +1,102 @@
+<html lang="en">
+<head>
+    {% load static %}
+    
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    <meta name="description" content="Página web de blog de café">
+
+    <!-- Prefetch -->
+
+    <!-- Preload -->
+    <link rel="preload" href="{% static 'css/normalize.css' %}" as="style">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap"  crossorigin="crossorigin" as="font">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="{% static 'css/style.css' %}" as="style">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    {% block style %}
+
+    {% endblock %}
+</head>
+<body>
+    
+    {% block crispy %}{% endblock %}
+
+    <header class="header mb-4">
+        <div class="contenedor-banner">
+        <div class="contenedor">
+            <div class="barra">
+                <a class="logo" href="{% url 'portal' %}">
+                    <h1 class="logo__nombre no-margin centrar-texto">ElRincon<span class="logo__bold">DeLasLetras</span></h1>
+                </a>
+
+                <nav class="navegacion">
+                    <a href="{% url 'nosotros' %}" class="navegacion__enlace">Nosotros</a>
+                    
+                    <a href="{% url 'catalogo' %}" class="navegacion__enlace">Catalogo</a>
+                    <a href="{% url 'carro:carrito' %}" class="navegacion__enlace">Carrito</a>
+                    
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'contacto' %}" class="navegacion__enlace">Contacto</a>
+                        <a href="{% url 'miperfil' %}" class="navegacion__enlace"><strong>  {{user.username}}</strong></a>
+                        <a href="{% url 'cerrar_sesion' %}" class="navegacion__enlace"><strong>Logout</strong></a>
+                    {% else %}
+                        <a href="{% url 'login' %}" class="navegacion__enlace">Login</a>
+                    {% endif %}
+
+
+                </nav>
+            </div>
+        </div>
+
+        <div class="header__texto">
+            <h1 class="no-margin">Descubre el Mundo Entre Páginas</h1>
+            <p class="no-margin">Explorando Ideas, Creando Aventuras</p>
+        </div>
+    </div>
+    </header>
+
+    <!--Manejo de Mensajes-->
+
+
+
+    {% block body %}
+        <!-- Contenido dinamico --->
+    {% endblock %}
+    <footer class="footer">
+        <div class="contenedor">
+            <div class="barra">
+                <a class="logo" href="{% url 'portal' %}">
+                    <h1 class="logo__nombre no-margin centrar-texto">ElRincon<span class="logo__bold">DeLasLetras</span></h1>
+                </a>
+
+                <nav class="navegacion">
+                    <a href="{% url 'catalogo' %}" class="navegacion__enlace">Catalogo</a>
+                    <a href="{% url 'contacto' %}" class="navegacion__enlace">Carrito</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="{% static 'js/modernizr.js' %}"></script>
+    <!--Sweet Alert  Estilos de Messages-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    {% if messages %}
+        {% for message in messages %}
+            <script>
+                    Swal.fire({
+                        "title": "AVISO",
+                        "text": "{{message}}",
+                        "icon": "success",
+
+                    })
+            </script>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>
