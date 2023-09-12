@@ -1,0 +1,43 @@
+{% extends 'base/base_login.html' %}
+{% load static %}
+
+{% block title %}
+    Producto
+{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/verproducto.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+{% endblock %}
+
+{% block body %}
+    <div class="contenedor contenido-principal mt-5">
+        <div class="contenedor-horizontal">
+            <div class="columna-izquierda">
+                <div class="imagen-container">
+                    {% if item.caratula %}
+                        <img loading="lazy" src="{{ item.caratula.url }}" alt="imagen blog" class="img-fluid rounded-start">
+                    {% else %}
+                        <img loading="lazy" src="{% static 'img/libro_general.jpg' %}" alt="imagen vacía" class="img-fluid rounded-start">
+                    {% endif %}
+                </div>
+            </div>
+            <div class="columna-derecha">
+                <div class="info-container">
+                    <h5 class="contenido-titulo">{{item.id_libro}}</h5>
+                    <h5 class="contenido-titulo">{{item.titulo}}</h5>
+                    <p class="contenido-datos">Autor: {{item.id_autor}}</p>
+                    <p class="contenido-datos">ISBN: {{item.isbn}}</p>
+                    <p class="contenido-datos"><b>Sipnosis:</b> {{item.sipnosis}}</p>
+                    <p class="contenido-datos">{{item.edicion}} Edición</p>
+                    <p class="contenido-datos"><b>Estado:</b> {{item.disponibilidad}}</p>
+                    <p class="contenido-datos"><b>Editorial:</b> {{item.id_editorial}}</p>
+                    <p class="contenido-datos"><b>Precio: {{item.precio_venta}} Lps</b></p>
+                </div>
+                <div class="carrito-container">
+                    <a href="{% url 'carro:agregar_producto' item.id_libro %}" class="btn btn-primary btn-block w-100 mb-3">Agregar al Carrito</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

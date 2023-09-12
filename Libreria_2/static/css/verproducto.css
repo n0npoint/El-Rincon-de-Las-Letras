@@ -1,0 +1,75 @@
+/* estilos-productos.css */
+
+/* Estilos generales */
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Contenedor horizontal */
+.contenedor-horizontal {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* Columna izquierda */
+.columna-izquierda {
+    width: 55%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Columna derecha */
+.columna-derecha {
+    width: 45%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Imagen */
+.imagen-container {
+    width: 600px;
+    height: 700px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.imagen-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Información del producto */
+.info-container {
+    width: 100%;
+}
+
+.contenido-titulo {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.contenido-datos {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.carrito-container {
+    margin-top: 20px;
+}
+
+.agregar-carrito {
+    width: 80%; 
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

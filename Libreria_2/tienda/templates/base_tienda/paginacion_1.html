@@ -1,0 +1,21 @@
+<div class="d-flex justify-content-center">
+    <span class="step-links">
+        {% if items.has_previous %}
+            <a class="btn btn-dark btn-lg" href="?page=1">
+                <span class="oi oi-media-skip-backward"></span> Primero
+            </a>
+            <a class="btn btn-dark btn-lg" href="?page={{ items.previous_page_number }}">
+                <span class="oi oi-chevron-left fas fa-angle-double-left text-white"></span> 
+            </a>
+        {% endif %}
+
+        {% if items.has_next %}
+            <a class="btn btn-dark btn-lg" href="?page={{ items.next_page_number }}">
+                 <span class="fas fa-angle-double-right"></span>
+            </a>
+            <a class="btn btn-dark btn-lg" href="?page={{ items.paginator.num_pages }}">
+                Último <span class="oi oi-media-skip-forward"></span>
+            </a>
+        {% endif %}
+    </span>
+</div>

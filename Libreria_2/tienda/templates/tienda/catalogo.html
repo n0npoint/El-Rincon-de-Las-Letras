@@ -1,0 +1,71 @@
+{% extends 'base/base_login.html' %}
+{% load static %}
+
+{% block title %}
+    Catálogo
+{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/catalogo_style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+{% endblock %}
+
+{% block body %}
+
+
+
+<div>
+    <div>
+        <main class="contenedor">
+            <h3 class="centrar-texto">Catalogo de Libreria</h3>
+        </main>
+    </div>
+<section>
+{% for item in items %}
+<div class="review-item-container" style="background-color: #EAEAEA;">
+
+    <div class="review-item-image">
+        {% if item.caratula %}
+            <img src="{{ item.caratula.url }}" alt="">     
+        {% else %}
+            <img src="{% static 'img/libro_general.jpg' %}" alt="">   
+        {% endif %}
+        <div class="review-person-title">
+        </div>
+    </div>
+
+    <div class="star-and-review">
+        <div>
+            <h2><b>{{ item.titulo }}</b></h2>
+        </div>
+        <div class="review-text">
+            <p>{{ item.sipnosis }}</p>
+            <p><b>{{ item.precio_venta }} LPS</b></p>
+            <button class="btn btn-warning" data-toggle="tooltip"
+            {% if item and item.disponibilidad|lower  == "disponible" %}onclick="location.href='{% url 'ver_item' id_libro=item.id_libro %}'"
+            {% else %}disabled{% endif %}>
+                Ver Más <i class="fa-solid fa-circle-info" style="color: #ffff;"></i>
+
+            </button>
+        </div>
+    </div>
+</div>
+{% endfor %}
+</section>
+</div>
+
+{% include "base_tienda/paginacion_1.html"%}
+
+
+
+
+
+    
+</div>
+
+        
+
+
+{% endblock %}
+
+

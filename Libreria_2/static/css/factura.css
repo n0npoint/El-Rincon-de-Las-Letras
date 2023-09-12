@@ -1,0 +1,129 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    font-size: 14px;
+}
+
+.invoice {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezado */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Datos de tu empresa */
+.company-info {
+    flex-grow: 1;
+    text-align: right; /* Alinea a la derecha */
+}
+
+.company-info h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.company-info p {
+    margin: 5px 0;
+}
+
+/* Datos del cliente */
+.client-info {
+    flex-grow: 1;
+    text-align: left; /* Alinea a la izquierda */
+    margin: 0;
+}
+
+.client-info h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.client-info p {
+    margin: 5px 0;
+}
+
+/* Detalles de la factura */
+.invoice-details {
+    margin: 0;
+}
+
+.invoice-details h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.invoice-details p {
+    margin: 5px 0;
+}
+
+/* Tabla de factura */
+.invoice-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 5px; /* Reducido el espacio entre filas */
+}
+
+.invoice-table th,
+.invoice-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    line-height: 0.5; /* Reducido el espacio vertical entre filas a la mitad */
+}
+
+.invoice-table th {
+    background-color: #784D3C;
+    color: #ffffff;
+}
+
+/* Pie de factura */
+.footer {
+    margin-top: 20px;
+    text-align: right;
+}
+
+/* Estilos para la impresión */
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+    }
+
+    .invoice {
+        margin: 0;
+        padding: 0;
+        max-width: none;
+        box-shadow: none;
+    }
+
+    .invoice-table th,
+    .invoice-table td {
+        border: none;
+    }
+}
+
+
+.my-button {
+	background-color: #ffb703;
+	color: #000000;
+	font-size: 20px;
+	padding: 10px 20px;
+	border-radius: 5px;
+  }
+
+.my-button:hover {
+	background-color: #ffd60a;
+}

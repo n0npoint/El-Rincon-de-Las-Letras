@@ -1,0 +1,270 @@
+:root {
+    --fuenteHeading: 'PT Sans', sans-serif !important;
+    --fuenteParrafos: 'Open Sans', sans-serif !important;
+
+    --primario: #784D3C !important;
+    --gris: #e1e1e1 !important;
+    --blanco: #ffffff !important;
+    --negro: #000000 !important;
+}
+
+html {
+    box-sizing: border-box !important;
+    font-size: 62.5% !important; /* 1 rem = 10px */    
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit !important;
+}
+
+body {
+    font-family: var(--fuenteParrafos) !important;
+    font-size: 1.6rem !important;
+    line-height: 2 !important;
+}
+
+/** Globales **/
+.contenedor {
+    width: min(90%, 120rem) !important;
+    margin: 0 auto !important;
+}
+a {
+    text-decoration: none !important;
+}
+h1, h2, h3, h4 {
+    font-family: var(--fuenteHeading) !important;
+    line-height: 1.2 !important;
+}
+h1 {
+    font-size: 4.8rem !important;
+}
+h2 {
+    font-size: 4rem !important;
+}
+h3 {
+    font-size: 3.2rem !important;
+}
+h4 {
+    font-size: 2.8rem !important;
+}
+img {
+    max-width: 100% !important;
+}
+/** Utilidades **/
+.no-margin {
+    margin: 0 !important;
+}
+.no-padding {
+    padding: 0 !important;
+}
+.centrar-texto {
+    text-align: center !important;
+}
+
+/** Header **/
+
+.contenedor-banner {
+    background-color: rgba(0,0,0,.7) !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.webp .header {
+    background-image: url(../img/banner.webp) !important;
+}
+.no-webp .header {
+    background-image: url(../img/banner.jpg) !important;
+}
+.header {
+    height: 60rem !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+}
+.header__texto {
+   text-align: center !important;
+   color: var(--blanco) !important;
+   margin-top: 5rem !important;
+}
+@media (min-width: 768px) {
+    .header__texto {
+        margin-top: 15rem !important;
+    }
+}
+.barra {
+    padding-top: 4rem !important;
+}
+
+@media (min-width: 768px) {
+    .barra {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+}
+.logo {
+    color: var(--blanco) !important;
+    
+}
+.logo__nombre {
+    font-weight: 400 !important;
+}
+.logo__bold {
+    font-weight: 700 !important;
+}
+@media (min-width: 768px) {
+    .navegacion {
+        display: flex !important;
+        gap: 2rem !important;
+    }
+}
+.navegacion__enlace {
+    display: block !important;
+    text-align: center !important;
+    font-size: 1.8rem !important;
+    color: var(--blanco) !important;
+}
+
+@media (min-width: 768px) {
+    .contenido-principal {
+        display: grid !important;
+        grid-template-columns: 2fr 1fr !important;
+        column-gap: 4rem !important;
+    }
+}
+
+.entrada {
+    border-bottom: 1px solid var(--gris) !important;
+    margin-bottom: 2rem !important;
+}
+.entrada:last-of-type {
+    border: none !important;
+    margin-bottom: 0 !important;
+}
+.boton {
+    display: block !important;
+    font-family: var(--fuenteHeading) !important;
+    color: var(--blanco) !important;
+    text-align: center !important;
+    padding: 1rem 3rem !important;
+    font-size: 1.8rem !important;
+    text-transform: uppercase !important;
+    font-weight: 700 !important;
+    margin-bottom: 2rem !important;
+    border: none !important;
+}
+
+@media (min-width: 768px) {
+    .boton {
+        display: inline-block !important;
+
+    }
+}
+.boton:hover {
+    cursor: pointer !important;
+}
+.boton--primario {
+    background-color: var(--negro) !important;
+}
+.boton--secundario {
+    background-color: var(--primario) !important;
+}
+
+.cursos {
+    list-style: none !important;
+}
+
+.widget-curso {
+    border-bottom: 1px solid var(--gris) !important;
+    margin-bottom: 2rem !important;
+}
+.widget-curso:last-of-type {
+    border: none !important;
+    margin-bottom: 0 !important;
+}
+.widget-curso__label {
+    font-family: var(--fuenteHeading) !important;
+    font-weight: bold !important;
+}
+.widget-curso__info {
+    font-weight: normal !important;
+}
+.widget-curso__label,
+.widget-curso__info {
+    font-size: 2rem !important;
+}
+
+.footer {
+    background-color: var(--negro) !important;
+    padding-bottom: 3rem !important;
+    margin-top: 4rem !important;
+}
+
+/** Sobre Nosotros **/
+@media (min-width: 768px) {
+    .sobre-nosotros {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        column-gap: 2rem !important;
+    }
+}
+
+/** Cursos **/
+.curso {
+    padding: 3rem 0 !important;
+    border-bottom: 1px solid var(--gris) !important;
+}
+@media (min-width: 768px) {
+    .curso {
+        display: grid !important;
+        grid-template-columns: 1fr 2fr !important;
+        column-gap: 2rem !important;
+    }
+}
+.curso:last-of-type {
+    border: none !important;
+}
+.curso__label {
+    font-family: var(--fuenteHeading) !important;
+    font-weight: bold !important;
+}
+.curso__info {
+    font-weight: normal !important;
+}
+.curso__label,
+.curso__info {
+    font-size: 2rem !important;
+}
+
+/** Contacto **/
+.contacto-bg {
+    background-image: url(../img/libro7.jpeg) !important;
+    height: 70rem !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}
+
+.formulario {
+    background-color: var(--blanco) !important;
+    margin: -5rem auto 0 auto !important;
+    width: 95% !important;
+    padding: 5rem !important;
+}
+.campo {
+    display: flex !important;
+    margin-bottom: 2rem !important;
+}
+.campo__label {
+    flex: 0 0 9rem !important;
+    text-align: right !important;
+    padding-right: 2rem !important;
+}
+.campo__field {
+    flex: 1 !important;
+    border: 1px solid var(--gris) !important;
+}
+.campo__field--textarea {
+    height: 20rem !important;
+}
