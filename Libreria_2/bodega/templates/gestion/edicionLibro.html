@@ -1,0 +1,57 @@
+{% extends 'base/base_login.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block title %} 
+    Modifica Libro
+{% endblock %}
+
+
+{% block style %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    <!-- Alerta de éxito -->
+    {% if mensaje %}
+    <div class="d-flex justify-content-center my-1">
+        <div class="alert alert-warning custom-alert alert-dismissible fade show w-100" role="alert">
+            
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+                    </button>
+                <strong class="text-dark">{{ mensaje }}</strong>
+        </div>
+    </div>
+            {% endif %}
+
+    
+    <br><br>
+    <div class="row">
+        <div class="col-12 col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <div style="background-color: #081c15; color: white; padding: 10px;">
+                        <h1>Modificar Libro</h1>
+                    </div>
+                    <hr>
+                    <form method="post" action="" class="" id="form_agregarLibro" enctype="multipart/form-data">
+                        {% csrf_token %}
+                
+                        {{ form|crispy}}
+                        <br>
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" id="btnEnviar" class="w-50 mb-2 btn btn-lg rounded-3 btn-dark">Agregar</button>
+                            <span style="margin: 0 10px;"></span>
+                            <button type="submit" id="btnCancelar" class="w-50 mb-2 btn btn-lg rounded-3 btn-dark">Cancelar</button>
+                        </div>   
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
